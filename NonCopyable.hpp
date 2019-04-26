@@ -1,26 +1,22 @@
-// This class demonstrates how to use piecewise_construct and forward_as_tuple
-// to new add elments into containers without copying 
+#pragma once
 
+#include <cstdlib>
+#include <map>
+#include <list>
 #include <string>
 #include <iostream>
-#include <map>
-
-using namespace std;
 
 class NonCopyable
 {
 private:
     int value = 0;
     std::string str;
-
 public:
     NonCopyable(int v, const std::string& s) : value(v), str(s) {}
-
     // ensure this class is non-copyable
     NonCopyable(const NonCopyable&) = delete;
     NonCopyable(const NonCopyable&& o) = delete;
     NonCopyable& operator=(const NonCopyable&) = delete;
-
     // function for easy debugging
     friend std::ostream& operator<<(std::ostream& os, const NonCopyable& o) {
         os << "[" << o.value << "] (" << o.str << ")"; 
