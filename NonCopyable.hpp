@@ -46,5 +46,13 @@ public:
         // Debug Print
         for(const auto& i : m)
             std::cout << i.second << std::endl;
+        
+        // similarly, push_back will also cause error
+        std::list< NonCopyable > l;
+        //l.push_back(NonCopyable(1, "Hello Again"));
+        l.emplace_back(3, "Hello More");
+        
+        for(const auto& i : l)
+            std::cout << i << std::endl;
     }
 };
