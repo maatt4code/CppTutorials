@@ -16,12 +16,14 @@
 #include <list>
 #include <string>
 #include <iostream>
+#include <atomic>
 
 class NonCopyable
 {
 private:
-    int value = 0;
+    std::atomic<int> value{0};
     std::string str;
+
 public:
     NonCopyable(int v, const std::string& s) : value(v), str(s) {}
     // ensure this class is non-copyable
