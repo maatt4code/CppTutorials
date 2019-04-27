@@ -1,3 +1,14 @@
+/**
+ * @file NonCopyable.hpp
+ *
+ * @brief This class demonstrates how to add objects into a container
+ * when the object is non-copyable or non-movable. Everything is just
+ * a blob or memory so objects can be created in-place :-D
+ *
+ * @author M
+ *
+ */
+
 #pragma once
 
 #include <cstdlib>
