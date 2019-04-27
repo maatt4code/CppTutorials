@@ -8,11 +8,14 @@
 
 int main(int argc, char** argv)
 {
+    // NonCopyables in containers ---------------------------------------------------------------
     NonCopyable::test();
-    
+   
+    // Template implementation in *.cpp in containers -------------------------------------------
     TemplateClass<Struct1> t1{Struct1()};
     TemplateClass<Struct2> t2{Struct2()};
     
+    // Variadic Template Function ---------------------------------------------------------------
     {
         // odd number of inputs
         std::stringstream ss;
