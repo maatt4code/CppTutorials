@@ -34,5 +34,19 @@ int main(int argc, char** argv)
         //VariadicTemplate::append(ss);
         //std::cout << ss.str() << std::endl;
     }
+    
+    // NonPODUnion -----------------------------------------------------------------------------
+    {
+        NonPODUnion u(NonPODUnion::Type::Struct);
+        std::cout << u.dum.i << std::endl;
+    }
+    {
+        NonPODUnion u(NonPODUnion::Type::String);
+        std::cout << u.str << std::endl;
+    }
+    {
+        NonPODUnion u(NonPODUnion::Type::Vector);
+        std::cout << u.vec[2] << std::endl;
+    }
     return 0;
 }
